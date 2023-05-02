@@ -17,7 +17,15 @@
   <div class="menu-inner-shadow"></div>
 
   <li class="menu-header small text-uppercase">
-    <span class="menu-header-text"><a href="#">Sair do Sistema</a></span>
+    <span class="menu-header-text"><a href="/">Início</a></span>
+  </li>
+
+  <li class="menu-header small text-uppercase">
+    <span class="menu-header-text"><a href="{{route("logout")}}">Sair do Sistema</a></span>
+  </li>
+
+  <li class="menu-header small text-uppercase">
+    <span class="menu-header-text">Versão: 1.0.0</span>
   </li>
 
   <!--<ul class="menu-inner py-1">

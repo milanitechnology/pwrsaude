@@ -21,13 +21,13 @@
       <div class="d-flex align-items-end row">
         <div class="col-sm-7">
           <div class="card-body">
-            <h5 class="card-title text-primary">Olá {{config('variables.templateName')}}! 🎉</h5>
+            <h5 class="card-title text-primary">Olá @auth {{auth()->user()->name}}! @endauth 🎉</h5>
             <p class="mb-4">Seja bem-vindo a plataforma da Pwr Saúde!</p>
           </div>
         </div>
         <div class="col-sm-5 text-center text-sm-left">
-          <div class="card-body pb-0 px-0 px-md-4">
-            <img src="{{asset('assets/img/illustrations/man-with-laptop-light.png')}}" height="140" alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png">
+          <div class="card-body pb-3 px-0 px-md-4">
+            <img src="{{asset('assets/img/icons/favicon.png')}}" height="140" alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png">
           </div>
         </div>
       </div>

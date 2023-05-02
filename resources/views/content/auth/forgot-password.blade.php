@@ -23,19 +23,19 @@
             </a>
           </div>
           <!-- /Logo -->
-          <h4 class="mb-2">Forgot Password? 🔒</h4>
-          <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
+          <h4 class="mb-2">Esqueceu a Senha? 🔒</h4>
+          <p class="mb-4">Digite seu e-mail e siga as instruções para redefinir sua senha.</p>
           <form id="formAuthentication" class="mb-3" action="javascript:void(0)" method="GET">
             <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" autofocus>
+              <label for="email" class="form-label">E-mail</label>
+              <input type="text" class="form-control" id="email" name="email" placeholder="Digite o e-mail cadastrado" autofocus>
             </div>
-            <button class="btn btn-primary d-grid w-100">Send Reset Link</button>
+            <button class="btn btn-primary d-grid w-100">Enviar</button>
           </form>
           <div class="text-center">
             <a href="{{url('auth/login-basic')}}" class="d-flex align-items-center justify-content-center">
               <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
-              Back to login
+              Voltar ao Login
             </a>
           </div>
         </div>
