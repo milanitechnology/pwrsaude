@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\ProfileController;
+use App\Http\Controllers\Payment\PaymentController;
+use App\Http\Controllers\Payment\StripePaymentController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -46,6 +49,18 @@ Route::group(['middleware' => ['auth']], function() {
      */
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
     Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+    /**
+     * PAYMENT DETAILS
+     */
+    Route::get('/payment-details', [PaymentController::class, 'show'])->name('payment.details');
+    Route::post('/payment-details', [PaymentController::class, 'store'])->name('payment.details.post');
+    
+    /**
+     * PAYMENT GATEWAY (STRIPE CHECKOUT)
+     */
+    Route::get('/payment-checkout', [StripePaymentController::class, 'show'])->name('payment.checkout');
+    Route::post('/payment-checkout', [StripePaymentController::class, 'post'])->name('payment.checkout.post');
 
     /**
      * Logout Routes

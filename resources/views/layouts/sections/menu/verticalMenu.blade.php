@@ -2,11 +2,8 @@
 
   <!-- ! Hide app brand if navbar-full -->
   <div class="app-brand demo">
-    <a href="{{url('/')}}" class="app-brand-link">
-      <span class="app-brand-logo demo">
-        @include('_partials.macros',["width"=>25,"withbg"=>'#696cff'])
-      </span>
-      <span class="app-brand-text demo menu-text fw-bold ms-2">{{config('variables.templateName')}}</span>
+    <a href="{{url('/')}}">
+      <img src="{{asset("assets/img/icons/favicon.png")}}" width="20%">
     </a>
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-autod-block d-xl-none">
@@ -18,6 +15,18 @@
 
   <li class="menu-header small text-uppercase">
     <span class="menu-header-text"><a href="/">Início</a></span>
+  </li>
+
+  <li class="menu-header small text-uppercase">
+    <span class="menu-header-text"><a href="{{route("profile")}}">Meu Perfil</a></span>
+  </li>
+
+  <li class="menu-header small text-uppercase">
+    <span class="menu-header-text"><a href="{{route("payment.details")}}">Formas de Pagamento</a></span>
+  </li>
+
+  <li class="menu-header small text-uppercase">
+    <span class="menu-header-text"><a href="{{route("payment.checkout")}}">Planos de Assinatura</a></span>
   </li>
 
   <li class="menu-header small text-uppercase">

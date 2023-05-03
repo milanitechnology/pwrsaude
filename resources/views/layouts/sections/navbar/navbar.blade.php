@@ -16,11 +16,8 @@ $navbarDetached = ($navbarDetached ?? '');
       <!--  Brand demo (display only for navbar-full and hide on below xl) -->
       @if(isset($navbarFull))
       <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
-        <a href="{{url('/')}}" class="app-brand-link gap-2">
-          <span class="app-brand-logo demo">
-            @include('_partials.macros',["width"=>25,"withbg"=>'#696cff'])
-          </span>
-          <span class="app-brand-text demo menu-text fw-bolder">{{config('variables.templateName')}}</span>
+        <a href="{{url('/')}}">
+          <img src="{{asset("assets/img/icons/pwrsaude_white.svg")}}" width="50%">
         </a>
       </div>
       @endif
@@ -54,7 +51,7 @@ $navbarDetached = ($navbarDetached ?? '');
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                <a class="dropdown-item" href="/pages/account-settings-account">
+                <a class="dropdown-item" href="{{route("profile")}}">
                   <div class="d-flex">
                     <div class="flex-shrink-0 me-3">
                       <div class="avatar avatar-online">
@@ -71,7 +68,7 @@ $navbarDetached = ($navbarDetached ?? '');
                 <div class="dropdown-divider"></div>
               </li>
               <li>
-                <a class="dropdown-item" href="/pages/account-settings-account">
+                <a class="dropdown-item" href="{{route("profile")}}">
                   <i class="bx bx-user me-2"></i>
                   <span class="align-middle">Meu Perfil</span>
                 </a>
@@ -88,7 +85,7 @@ $navbarDetached = ($navbarDetached ?? '');
                 <div class="dropdown-divider"></div>
               </li>
               <li>
-                <a class="dropdown-item" href="javascript:void(0);">
+                <a class="dropdown-item" href="{{route("logout")}}">
                   <i class='bx bx-power-off me-2'></i>
                   <span class="align-middle">Sair</span>
                 </a>
