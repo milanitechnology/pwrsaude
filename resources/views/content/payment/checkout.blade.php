@@ -12,41 +12,119 @@
 </h4>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-lg-12 col-12 col-sm-12">
     <ul class="nav nav-pills flex-column flex-md-row mb-3">
       <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-card me-1"></i> Formas de Pagamento</a></li>
     </ul>
+  </div>
+
+  <div class="col-lg-4 col-12 col-sm-4">
     <div class="card mb-4">
       <h5 class="card-header">+Saúde Individual</h5>
-      <!-- Account -->
       <hr class="my-0">
-      <div class="card-body">
-        @if (Session::has('success')) 
-          <div class="alert alert-success text-center"> 
-            <a href= "#" class="close" data-dismiss="alert" aria-label="close">×</a> 
-            <p>{{ Session::get('success') }}</p>
-          </div> 
-        @endif 
+      <h6 class="card-header">Valor Garantido por 12 meses</h6>
+      <h2 class="card-header">R$ 39,90 <span style="font-size: 1rem;">por mês</span></h2>
 
+      <ul>
+        <li>25 Especialidades Médicas</li>
+        <li>Terapia em Psicologia</li>
+        <li>Sem Carência • Utilização em 48h</li>
+        <li>Sem Limite de Idade • de 0 a 99 anos</li>
+        <li>Sem Limite de Utilização</li>
+        <li>Fidelidade de 12 Meses</li>
+        <li>Descontos e Beneficios Exclusivos</li>
+      </ul>
+
+      <div class="card-body">
+        
         <form 
             role="form"
             action="{{ route('payment.checkout.post') }}" 
-            method="post" 
-            class="require-validation" 
-            data-cc-on-file="false" 
-            data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" 
-            id="payment-form"> 
+            method="post"> 
 
           @csrf 
 
           <div class="row"> 
               <div class="col-xs-12"> 
-                  <button class="btn btn-primary btn-lg btn -block" type="submit">Assinar</button> 
+                  <button class="btn btn-dark btn-lg btn-block w-100" style="background: linear-gradient(45deg, #3F2E86 0%, #E51E5B 100%)" type="submit">Assinar</button> 
               </div> 
           </div> 
         </form>
       </div>
     </div>
+  </div>
+  
+  <div class="col-lg-4 col-12 col-sm-4">
+    <div class="card mb-4">
+      <h5 class="card-header">Assinatura Básica</h5>
+      <hr class="my-0">
+      <h6 class="card-header">Telemedicina por Assinatura</h6>
+      <h2 class="card-header">R$ 45,90 <span style="font-size: 1rem;">por mês</span></h2>
+
+      <ul>
+        <li>+25 Especialidades Médicas</li>
+        <li>Terapia em Psicologia</li>
+        <li>Sem Carência • Utilização em 48h</li>
+        <li>Sem Limite de Utilização</li>
+        <li>Sem Fidelidade e Sem Multas</li>
+        <li>Taxa de Adesão de R$ 15,00</li>
+        <li>Descontos e Beneficios Exclusivos</li>
+      </ul>
+
+      <div class="card-body">
+        
+        <form 
+            role="form"
+            action="{{ route('payment.checkout.post') }}" 
+            method="post"> 
+
+          @csrf 
+
+          <div class="row"> 
+              <div class="col-xs-12"> 
+                  <button class="btn btn-dark btn-lg btn-block w-100" style="background: linear-gradient(45deg, #3F2E86 0%, #E51E5B 100%)" type="submit">Assinar</button> 
+              </div> 
+          </div> 
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-12 col-sm-4">
+    <div class="card mb-4">
+      <h5 class="card-header">+Saúde Familiar</h5>
+      <hr class="my-0">
+      <h6 class="card-header">A partir de 2 vidas (Max. 9)</h6>
+      <h2 class="card-header">R$ 34,90 <span style="font-size: 1rem;">por mês</span></h2>
+
+      <ul>
+        <li>25 Especialidades Médicas</li>
+        <li>Terapia em Psicologia</li>
+        <li>Sem Carência • Utilização em 48h</li>
+        <li>Sem Limite de Idade • de 0 a 99 anos</li>
+        <li>Sem Limite de Utilização</li>
+        <li>Fidelidade de 12 Meses</li>
+        <li>Descontos e Beneficios Exclusivos</li>
+      </ul>
+
+      <div class="card-body">
+        
+        <form 
+            role="form"
+            action="{{ route('payment.checkout.post') }}" 
+            method="post"> 
+
+          @csrf 
+
+          <div class="row"> 
+              <div class="col-xs-12"> 
+                  <button class="btn btn-dark btn-lg btn-block w-100" style="background: linear-gradient(45deg, #3F2E86 0%, #E51E5B 100%)" type="submit">Assinar</button> 
+              </div> 
+          </div> 
+        </form>
+      </div>
+    </div>
+  </div>
   </div>
 </div>
 @endsection
@@ -123,74 +201,3 @@ crossorigin="anonymous"></script>
   });
   
   </script>
-
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    
-<script type="text/javascript">
-  
-$(function() {
-  
-    /*------------------------------------------
-    --------------------------------------------
-    Stripe Payment Code
-    --------------------------------------------
-    --------------------------------------------*/
-    
-    var $form = $(".require-validation");
-     
-    $('form.require-validation').bind('submit', function(e) {
-        var $form = $(".require-validation"),
-        inputSelector = ['input[type=email]', 'input[type=password]',
-                         'input[type=text]', 'input[type=file]',
-                         'textarea'].join(', '),
-        $inputs = $form.find('.required').find(inputSelector),
-        $errorMessage = $form.find('div.error'),
-        valid = true;
-        $errorMessage.addClass('hide');
-    
-        $('.has-error').removeClass('has-error');
-        $inputs.each(function(i, el) {
-          var $input = $(el);
-          if ($input.val() === '') {
-            $input.parent().addClass('has-error');
-            $errorMessage.removeClass('hide');
-            e.preventDefault();
-          }
-        });
-     
-        if (!$form.data('cc-on-file')) {
-          e.preventDefault();
-          Stripe.setPublishableKey($form.data('stripe-publishable-key'));
-          Stripe.createToken({
-            number: $('.card-number').val(),
-            cvc: $('.card-cvc').val(),
-            exp_month: $('.card-expiry-month').val(),
-            exp_year: $('.card-expiry-year').val()
-          }, stripeResponseHandler);
-        }
-    
-    });
-      
-    /*------------------------------------------
-    --------------------------------------------
-    Stripe Response Handler
-    --------------------------------------------
-    --------------------------------------------*/
-    function stripeResponseHandler(status, response) {
-        if (response.error) {
-            $('.error')
-                .removeClass('hide')
-                .find('.alert')
-                .text(response.error.message);
-        } else {
-            /* token contains id, last4, and card type */
-            var token = response['id'];
-                 
-            $form.find('input[type=text]').empty();
-            $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
-            $form.get(0).submit();
-        }
-    }
-     
-});
-</script>
