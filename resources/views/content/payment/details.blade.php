@@ -129,22 +129,3 @@ crossorigin="anonymous"></script>
     });
   });
 </script>
-
-<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
-<script type="text/javascript">
-  $(function() {
-    var stripe = Stripe('pk_test_51N3mETFGTazuFpF0cMTd92TFpUKZURTofAoadewM2kAN3YYfTBKri1C9ALIsbqxqioH214TpYcmw6CqPulm7LEYc00jbhve2Wo');
-    
-    stripe
-    .createPaymentMethod({
-      type: 'card',
-      card: cardElement,
-      billing_details: {
-        name: 'Jenny Rosen',
-      },
-    })
-    .then(function(result) {
-      console.log(result);
-    });
-  });
-</script>

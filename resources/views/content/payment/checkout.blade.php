@@ -11,6 +11,8 @@
   <span class="text-muted fw-light">Planos de Assinatura /</span> Checkout
 </h4>
 
+@include('layouts.partials.messages')
+
 <div class="row">
   <div class="col-lg-12 col-12 col-sm-12">
     <ul class="nav nav-pills flex-column flex-md-row mb-3">
@@ -43,6 +45,8 @@
             method="post"> 
 
           @csrf 
+
+          <input type="hidden" id="priceId" name="priceId" value="price_1N5bjkFGTazuFpF0FtGZQJ9I" />
 
           <div class="row"> 
               <div class="col-xs-12"> 
@@ -80,6 +84,8 @@
 
           @csrf 
 
+          <input type="hidden" id="priceId" name="priceId" value="price_1N5cDxFGTazuFpF0ItKadGXO" />
+
           <div class="row"> 
               <div class="col-xs-12"> 
                   <button class="btn btn-dark btn-lg btn-block w-100" style="background: linear-gradient(45deg, #3F2E86 0%, #E51E5B 100%)" type="submit">Assinar</button> 
@@ -115,6 +121,8 @@
             method="post"> 
 
           @csrf 
+
+          <input type="hidden" id="priceId" name="priceId" value="price_1N5cEeFGTazuFpF0lBdlbWPW" />
 
           <div class="row"> 
               <div class="col-xs-12"> 
